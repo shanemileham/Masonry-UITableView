@@ -10,16 +10,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    int width = self.view.frame.size.width;
-    int height = self.view.frame.size.height;
-    
-    // messageTableView
-    UITableView *messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    // UITableView
+    UITableView *messageTableView = [[UITableView alloc] initWithFrame:self.view.frame];
     messageTableView.translatesAutoresizingMaskIntoConstraints = NO;
     messageTableView.estimatedRowHeight = 44.0;
-    messageTableView.allowsSelection = NO;
     [messageTableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:@"messageTableViewCell"];
     messageTableView.dataSource = self;
     messageTableView.delegate = self;
