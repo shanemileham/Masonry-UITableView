@@ -8,6 +8,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -15,16 +16,11 @@
     UITableView *messageTableView = [[UITableView alloc] initWithFrame:self.view.frame];
     messageTableView.translatesAutoresizingMaskIntoConstraints = NO;
     messageTableView.estimatedRowHeight = 44.0;
-    [messageTableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:@"messageTableViewCell"];
+    [messageTableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:@"cell"];
     messageTableView.dataSource = self;
     messageTableView.delegate = self;
     [self.view addSubview:messageTableView];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -41,10 +37,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageTableViewCell"];
+    MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (cell == nil) {
-        cell = [[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"messageTableViewCell"];
+        cell = [[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
     cell.textLabel.text = @"Title";
