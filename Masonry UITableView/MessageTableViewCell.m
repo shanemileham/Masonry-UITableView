@@ -16,6 +16,10 @@
     if (self) {
         [self.textLabel setTextColor:[UIColor blackColor]];
         [self.detailTextLabel setTextColor:[UIColor darkGrayColor]];
+        
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        // If YES, creates another constraint which isn't wanted
+        // If NO, says: "Warning once only: Detected a case where constraints ambiguously suggest a height of zero for a tableview cell's content view. We're considering the collapse unintentional and using standard height instead."
     }
     
     return self;
