@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "38618AB1B726D1464D5DFA12D95CE6B8904D9798",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C28177C174510112EF274C896240D205CDD98E8C" : 0,
+    "38618AB1B726D1464D5DFA12D95CE6B8904D9798" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5B4C5493-0F53-4E3A-9E76-59306A50C049",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C28177C174510112EF274C896240D205CDD98E8C" : "bond\/ios\/",
+    "38618AB1B726D1464D5DFA12D95CE6B8904D9798" : "Masonry%20UITableView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Masonry UITableView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Masonry UITableView.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shanemileham\/Masonry-UITableView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38618AB1B726D1464D5DFA12D95CE6B8904D9798"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/danielsinger\/Bond-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C28177C174510112EF274C896240D205CDD98E8C"
+    }
+  ]
+}
