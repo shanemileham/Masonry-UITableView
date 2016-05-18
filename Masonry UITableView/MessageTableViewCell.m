@@ -1,6 +1,7 @@
 
 #import "MessageTableViewCell.h"
 #import "Masonry.h"
+#import "PureLayout.h"
 
 @interface MessageTableViewCell()
 
@@ -18,8 +19,6 @@
         [self.detailTextLabel setTextColor:[UIColor darkGrayColor]];
         
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        // If YES, creates another constraint which isn't wanted
-        // If NO, says: "Warning once only: Detected a case where constraints ambiguously suggest a height of zero for a tableview cell's content view. We're considering the collapse unintentional and using standard height instead."
     }
     
     return self;
@@ -29,14 +28,34 @@
 {
     // MASONRY - remake/update constraints here
     
-    [self.textLabel mas_updateConstraints:^(MASConstraintMaker *make){
-        make.top.equalTo(self.mas_top).with.offset(10);
-    }];
-
-    [self.detailTextLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.textLabel.mas_bottom).with.offset(10);
-        make.bottom.equalTo(self.mas_bottom).with.offset(-50);
-    }];
+//    [self.textLabel mas_updateConstraints:^(MASConstraintMaker *make){
+//        make.top.equalTo(self.mas_top).with.offset(10);
+//    }];
+//
+//    [self.detailTextLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.textLabel.mas_bottom).with.offset(10);
+//        make.bottom.equalTo(self.mas_bottom).with.offset(-50);
+//    }];
+    
+    
+    #define kLabelHorizontalInsets      30.0f
+    #define kLabelVerticalInsets        20.0f
+    
+//    [NSLayoutConstraint autoSetPriority:UILayoutPriorityRequired forConstraints:^{
+//        [self.textLabel autoSetContentCompressionResistancePriorityForAxis:ALAxisVertical];
+//    }];
+    [self.textLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kLabelVerticalInsets];
+    [self.textLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:kLabelHorizontalInsets];
+    [self.textLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:kLabelHorizontalInsets];
+    
+    [self.detailTextLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.textLabel withOffset:0];
+    
+//    [NSLayoutConstraint autoSetPriority:UILayoutPriorityRequired forConstraints:^{
+//        [self.detailTextLabel autoSetContentCompressionResistancePriorityForAxis:ALAxisVertical];
+//    }];
+    [self.detailTextLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:kLabelHorizontalInsets];
+    [self.detailTextLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:kLabelHorizontalInsets];
+    [self.detailTextLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kLabelVerticalInsets];
     
     [super updateConstraints];
 }
